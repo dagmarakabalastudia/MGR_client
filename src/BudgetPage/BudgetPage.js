@@ -291,8 +291,7 @@ export default function BudgetPage() {
           addToast("Wystąpił błąd", "error");
         });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, [id, addToast]);
 
   const addParticipant = (userEmail) => {
     axios
@@ -316,7 +315,6 @@ export default function BudgetPage() {
       })
       .catch((error) => {
         console.error("Error fetching users:", error);
-        console.log(error);
         addToast(
           error?.response?.data.message
             ? error?.response?.data.message

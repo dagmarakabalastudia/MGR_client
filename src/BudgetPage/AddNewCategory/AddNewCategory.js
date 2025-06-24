@@ -71,12 +71,18 @@ export default function AddNewCategory({
             <input
               type="number"
               name="moneyLimit"
+              step="0.01"
+              min="0"
               className={`customInput ${
                 formik.errors?.moneyLimit && formik.touched?.moneyLimit
                   ? "error"
                   : ""
               } `}
-              value={formik.values?.moneyLimit}
+              value={
+                formik.values?.moneyLimit
+                  ? parseFloat(formik.values?.moneyLimit.toFixed(2))
+                  : formik.values?.moneyLimit
+              }
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />

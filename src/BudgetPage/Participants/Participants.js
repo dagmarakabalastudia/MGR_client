@@ -37,7 +37,7 @@ export default function Participants({
           {participants && participants.length > 0 ? (
             participants.map((participant) => (
               <div
-                key={`participant-${participant.name}`}
+                key={`participant-${participant.username}`}
                 className="participants__item"
               >
                 <div className="participants__circle">

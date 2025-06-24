@@ -19,10 +19,13 @@ export default function BudgetPopup({
     validate: (values) => {
       const errors = {};
       if (!values.name) {
-        errors.name = "Required";
+        errors.name = "Pole wymagane";
       }
       if (!values.totalAmount) {
-        errors.totalAmount = "Required";
+        errors.totalAmount = "Pole wymagane";
+      }
+      if (values.totalAmount <= 0) {
+        errors.totalAmount = "Wartość nie może być ujemna";
       }
       return errors;
     },
@@ -61,13 +64,19 @@ export default function BudgetPopup({
             </label>
             <input
               type="number"
+              step="0.01"
+              min="0"
               name="totalAmount"
               className={`customInput ${
                 formik.errors?.totalAmount && formik.touched?.totalAmount
                   ? "error"
                   : ""
               } `}
-              value={formik.values?.totalAmount}
+              value={
+                formik.values?.totalAmount
+                  ? parseFloat(formik.values?.totalAmount.toFixed(2))
+                  : formik.values?.totalAmount
+              }
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />

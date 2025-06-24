@@ -135,7 +135,6 @@ export default function Transactions({
     link.click();
     document.body.removeChild(link);
   };
-
   return (
     <div className="transactions">
       <div className="transactions__wrapper">
@@ -143,10 +142,15 @@ export default function Transactions({
           <div className="transactions__buttons">
             <div
               className={`transactions__amount ${
-                budgetAmount > 0
-                  ? "green"
-                  : defaultCategory
+                defaultCategory
                   ? defaultCategory.currentAmount < 0
+                    ? "red"
+                    : defaultCategory.currentAmount >
+                      defaultCategory.moneyLimit / 2
+                    ? "green"
+                    : ""
+                  : budgetAmount > 0
+                  ? "green"
                   : budgetAmount < 0
                   ? "red"
                   : ""

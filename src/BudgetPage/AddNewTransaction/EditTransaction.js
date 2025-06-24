@@ -39,6 +39,9 @@ export default function EditTransaction({
       if (!values.productCost) {
         errors.productCost = "Pole wymagane";
       }
+      if (values.productCost <= 0) {
+        errors.totalAmount = "Wartość nie może być ujemna";
+      }
 
       return errors;
     },
