@@ -2,7 +2,6 @@ import React from "react";
 import { createAccountStore } from "./store/store";
 import { Navigate } from "react-router-dom";
 import Top from "./Top/Top";
-import { ToastProvider } from "./ToastComponent/ToastComponent";
 
 export default function ProtectRoute({ children }) {
   const user = createAccountStore((state) => state.user);
@@ -13,10 +12,8 @@ export default function ProtectRoute({ children }) {
   if (user) {
     return (
       <>
-        <ToastProvider>
-          <Top userLetter={user?.username ? user?.username[0] : ""} />
-          {children}
-        </ToastProvider>
+        <Top userLetter={user?.username ? user?.username[0] : ""} />
+        {children}
       </>
     );
   }
