@@ -1,0 +1,37 @@
+.chartView {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid var(--border-gray);
+  box-shadow: 0px 0px 12px #36363630;
+  color: var(--black);
+  background-color: var(--white);
+}
+.chartView__content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chartView__chart {
+  min-height: 50vh;
+  min-width: 50vw;
+}
+.chartView__title {
+  font-size: 20px;
+  padding: 8px 12px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-gray);
+}
+.chartView__type {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.chartView__type .customFormElement {
+  width: auto;
+}
+.chartView__type .customButton {
+  margin: 0;
+}

@@ -1,0 +1,13 @@
+.addNewTransaction__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 300px;
+}
+@media (max-width: 1366px) {
+  .addNewTransaction__form {
+    height: calc(80vh - 67px);
+    overflow: auto;
+  }
+}

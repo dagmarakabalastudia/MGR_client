@@ -1,0 +1,25 @@
+.profile {
+  display: flex;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pink);
+}
+.profile__box {
+  display: flex;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: #fff;
+  flex-direction: column;
+  box-shadow: 0px 0px 32px 8px #86868630;
+  gap: 8px;
+}
+.profile__name {
+  font-size: 20px;
+}
+@media (max-width: 1366px) {
+  .profile__box {
+    padding: 12px;
+  }
+}

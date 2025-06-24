@@ -1,0 +1,42 @@
+.modalComponent__popupBackground {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 20123;
+  background-color: #0c0c0d56;
+}
+.modalComponent__title {
+  background-color: var(--navy);
+  color: var(--white);
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+}
+.modalComponent__box {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20124;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background-color: var(--white);
+  max-height: 90vh;
+  overflow: hidden;
+}
+.modalComponent__content {
+  padding: 16px;
+  height: calc(100% - 47px);
+  overflow: auto;
+}
+.modalComponent__box .css-1nmdiq5-menu > div {
+  max-height: 100px !important;
+}
+@media (max-width: 1366px) {
+  .modalComponent__content {
+    padding: 10px;
+  }
+}

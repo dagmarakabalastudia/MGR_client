@@ -1,0 +1,9 @@
+.deleteParticipant__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.deleteParticipant__buttons button {
+  margin: 0;
+}

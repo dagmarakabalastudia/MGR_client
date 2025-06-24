@@ -1,0 +1,149 @@
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --border-gray: #d9d9d9;
+  --border-black: #303030;
+  --gray-text: #767676;
+  --black: #1e1e1e;
+  --gray: #b2b2b2;
+  --pink: #fef1ff;
+  --blue-light: #cadcfc;
+  --navy: #00246b;
+  --dark-navy: #021a4b;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  --red: #8d0505;
+  --red-2: #dc4e4e;
+  --yellow: #f5c527;
+  --dark-red: #6b0808;
+  --green: #87c570;
+  --another-black: #2c2c2c;
+  --violet: #5c0855;
+  --violet-opacity: #5c085542;
+}
+
+.customButton {
+  display: flex;
+  gap: 8px;
+  line-height: 1;
+  padding: 12px;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 14px;
+  background-color: var(--navy);
+  border: 1px solid var(--another-black);
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.customButton:hover {
+  background-color: var(--dark-navy);
+}
+
+.customFormElement {
+  display: flex;
+  position: relative;
+  gap: 3px;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+.customFormElement.center {
+  align-items: center;
+  justify-content: flex-start;
+}
+.customFormElement label {
+  font-size: 14px;
+}
+.customFormElement label sup {
+  color: var(--red);
+  font-size: 16px;
+  line-height: 1;
+}
+.customError {
+  display: block;
+  position: absolute;
+  line-height: 1;
+  font-size: 12px;
+  bottom: 0;
+  left: 0;
+  color: var(--red);
+}
+.customInput {
+  display: block;
+  font-size: 14px;
+  padding: 4px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+  background-color: var(--white);
+  border: 1px solid var(--border-gray);
+  outline: none;
+  transition: all 0.2s linear;
+}
+.customInput:not([type="checkbox"]) {
+  min-height: 32px;
+}
+.customInput[type="checkbox"] {
+  min-height: 20px;
+  min-width: 20px;
+  height: 20px;
+  width: 20px;
+  --webkit-apearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.customInput[type="radio"] {
+  min-height: 20px;
+  min-width: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  --webkit-apearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.customInput[type="checkbox"]:checked,
+.customInput[type="radio"]:checked {
+  background-color: var(--navy);
+}
+.customInput:hover,
+.customInput:focus {
+  border: 1px solid var(--navy);
+}
+.customInput.error {
+  border: 1px solid var(--red);
+}
+.customTextarea {
+  display: block;
+  font-size: 14px;
+  padding: 4px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+  background-color: var(--white);
+  border: 1px solid var(--border-gray);
+  outline: none;
+  resize: none;
+  transition: all 0.2s linear;
+}
+.customTextarea:hover,
+.customTextarea:focus {
+  border: 1px solid var(--navy);
+}
+.customTextarea.error {
+  border: 1px solid var(--red);
+}
+.css-13cymwt-control,
+.css-t3ipsp-control {
+  min-height: 32px !important;
+  height: 32px !important;
+  overflow: auto;
+}
+.css-1xc3v61-indicatorContainer {
+  padding: 4px 8px !important;
+}
+.css-19bb58m {
+  margin: 0 !important;
+}
