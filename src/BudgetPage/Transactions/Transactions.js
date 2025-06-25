@@ -21,6 +21,7 @@ export default function Transactions({
   editTransaction,
   defaultCategory,
   usersList,
+  anomalies,
 }) {
   const chartRef = useRef(null);
   const [openPopupToAdd, setOpenPopupToAdd] = useState(false);
@@ -256,6 +257,7 @@ export default function Transactions({
               transactions.findIndex((t) => t._id === editingTransaction)
             ]
           }
+          budgetId={budgetId}
           setOpenPopupToAdd={setEditingTransaction}
           onSubmitBehavior={editTransaction}
           user={user}
@@ -299,6 +301,9 @@ export default function Transactions({
                 transaction={transaction}
                 setEditingTransaction={setEditingTransaction}
                 setDeletedId={setDeletedId}
+                isAnomaly={
+                  anomalies.findIndex((a) => a._id === transaction._id) !== -1
+                }
               />
             ))
           ) : (

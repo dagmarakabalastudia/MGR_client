@@ -10,13 +10,13 @@ export default function EditTransaction({
   setOpenPopupToAdd,
   onSubmitBehavior,
   user,
-
+  budgetId,
   categories,
 }) {
   const formik = useFormik({
     initialValues: {
       _id: transaction._id,
-      budget: transaction.budgetId,
+      budget: budgetId,
       category: transaction.category._id,
       user: user,
       productName: transaction.productName,

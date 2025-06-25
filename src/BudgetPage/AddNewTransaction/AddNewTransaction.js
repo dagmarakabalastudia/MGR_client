@@ -93,6 +93,7 @@ export default function AddNewTransaction({
               type="number"
               name="productCost"
               min="0"
+              step="0.01"
               className={`customInput ${
                 formik.errors?.productCost && formik.touched?.productCost
                   ? "error"

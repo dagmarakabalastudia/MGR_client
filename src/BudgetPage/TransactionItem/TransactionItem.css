@@ -6,6 +6,13 @@
   gap: 8px;
   padding: 0 0 0 12px;
   border-bottom: 1px solid var(--border-gray);
+  transition: all 0.2s linear;
+}
+.transactionItem.anomaly {
+  box-shadow: inset 0 0px 1px 1px var(--red);
+}
+.transactionItem:hover {
+  background-color: var(--blue-light-opacity);
 }
 .transactionItem__tooltip {
   display: block;

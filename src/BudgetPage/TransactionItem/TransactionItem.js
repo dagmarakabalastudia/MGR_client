@@ -7,11 +7,15 @@ export default function TransactionItem({
   transaction,
   setEditingTransaction,
   setDeletedId,
+  isAnomaly,
 }) {
   const Icon = BsIcons[transaction?.category?.icon];
   const [positionTooltip, setPositionTooltip] = useState(-1);
   return (
-    <div className="transactionItem">
+    <div
+      className={`transactionItem ${isAnomaly ? "anomaly" : ""}`}
+      title={`${isAnomaly ? "Transakcja podejrzana" : ""}`}
+    >
       <div className="transactionItem__left">
         <div
           className="transactionItem__category"

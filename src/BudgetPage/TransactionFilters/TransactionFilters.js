@@ -57,6 +57,7 @@ export default function TransactionFilters({
             type="number"
             className="customInput"
             min="0"
+            step="0.01"
             name="filteredPriceMin"
             value={filteredPriceMin || undefined}
             onChange={(e) =>
@@ -72,6 +73,7 @@ export default function TransactionFilters({
           <input
             type="number"
             min="0"
+            step="0.01"
             className="customInput"
             name="filteredPriceMax"
             value={filteredPriceMax || undefined}

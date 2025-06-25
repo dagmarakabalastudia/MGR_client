@@ -46,6 +46,7 @@ export default function BudgetPage() {
   const [budgetTransactions, setBudgetTransactions] = useState([]);
   const [filteredCategory, setCategoriesToFilter] = useState(null);
   const [budgetCategories, setBudgetCategories] = useState([]);
+  const [anomalies, setAnomalies] = useState([]);
 
   const iconsList = [
     {
@@ -290,6 +291,15 @@ export default function BudgetPage() {
           setBudgetCategories([]);
           addToast("Wystąpił błąd", "error");
         });
+      axios
+        .get(process.env.REACT_APP_SERVER_URL + "transactions/anomalies/" + id)
+        .then((response) => {
+          setAnomalies(response.data || []);
+        })
+        .catch((error) => {
+          addToast("Wystąpił błąd", "error");
+          setAnomalies([]);
+        });
     }
   }, [id, addToast]);
 
@@ -314,7 +324,6 @@ export default function BudgetPage() {
           });
       })
       .catch((error) => {
-        console.error("Error fetching users:", error);
         addToast(
           error?.response?.data.message
             ? error?.response?.data.message
@@ -443,6 +452,16 @@ export default function BudgetPage() {
             addToast("Wystąpił błąd", "error");
           });
         axios
+          .get(process.env.REACT_APP_SERVER_URL + "budgets/" + id)
+          .then((response) => {
+            setUserBudget(response.data.budget);
+          })
+          .catch((error) => {
+            console.error("Error fetching users:", error);
+            setUserBudget(undefined);
+            addToast("Wystąpił błąd", "error");
+          });
+        axios
           .get(process.env.REACT_APP_SERVER_URL + "categories/budget/" + id)
           .then((response) => {
             setBudgetCategories(response.data);
@@ -501,7 +520,6 @@ export default function BudgetPage() {
                 categories={budgetCategories}
                 iconsList={iconsList}
               />
-
               <Transactions
                 editTransaction={editTransaction}
                 transactions={budgetTransactions.filter(
@@ -518,6 +536,7 @@ export default function BudgetPage() {
                     )
                   ]
                 }
+                anomalies={anomalies}
                 deleteTransaction={deleteTransaction}
                 user={user.id}
                 budgetAmount={userBudget?.totalAmount}
