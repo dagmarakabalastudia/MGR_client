@@ -9,6 +9,8 @@ import { Routes, Route } from "react-router-dom";
 import { createAccountStore } from "./store/store";
 import moment from "moment";
 import Register from "./Login/Register";
+import EditProfile from "./EditProfile/EditProfile";
+import ErrorPage from "./ErrorPage/ErrorPage";
 
 export default function App() {
   moment.updateLocale("pl", {
@@ -36,12 +38,17 @@ export default function App() {
   return (
     <>
       <Routes>
+        <Route path="/*" element={<ErrorPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<ProtectRoute children={<Profile />} />} />
         <Route
           path="/budget/:id"
           element={<ProtectRoute children={<BudgetPage />} />}
+        />
+        <Route
+          path="/profile"
+          element={<ProtectRoute children={<EditProfile />} />}
         />
       </Routes>
     </>

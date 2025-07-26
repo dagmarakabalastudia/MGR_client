@@ -29,7 +29,9 @@
   line-height: 1;
   padding: 12px;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
+  text-align: center;
   font-size: 14px;
   background-color: var(--navy);
   border: 1px solid var(--another-black);
@@ -94,6 +96,7 @@
   --webkit-apearance: none;
   appearance: none;
   cursor: pointer;
+  border: 1px solid var(--border-gray);
 }
 .customInput[type="radio"] {
   min-height: 20px;
@@ -112,6 +115,11 @@
 .customInput:hover,
 .customInput:focus {
   border: 1px solid var(--navy);
+}
+.customInput[disabled] {
+  border: 1px solid var(--border-gray) !important;
+  cursor: default !important;
+  background-color: var(--light-gray) !important;
 }
 .customInput.error {
   border: 1px solid var(--red);

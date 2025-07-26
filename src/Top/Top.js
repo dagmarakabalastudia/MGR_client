@@ -21,7 +21,7 @@ export default function Top({ userLetter }) {
           {openMenu ? (
             <div className="top__menu">
               <Link to="/profile" className="top__element">
-                <BsGear /> Edytuj profil
+                <BsGear /> Profil
               </Link>
               <button
                 className="top__element"
